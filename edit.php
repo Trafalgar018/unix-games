@@ -160,8 +160,8 @@ if (!empty($_POST)) {
             <div class="form-group">
                 <label for="online">Online</label>
                 <select class="form-control" name="online">
-                    <option value=false>No</option>
-                    <option value=true>Yes</option>
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
                 </select>
             </div>
 

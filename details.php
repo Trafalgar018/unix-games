@@ -59,7 +59,7 @@ $queryResult->execute([
             <td>
 
                 <tr>
-                    <img src="<?= $row['image'] ?>">
+                    <img src="<?= $row['image'] ?>" width="500px">
                 </tr>
             <td>
 
@@ -73,29 +73,31 @@ $queryResult->execute([
                     <td><?= $row['name'] ?></td>
                 </tr>
 
-
                 <tr>
                     <th>Genre:</th>
                     <td><?= $row['genre'] ?></td>
                 </tr>
-
 
                 <tr>
                     <th>Date:</th>
                     <td><?= $row['date'] ?></td>
                 </tr>
 
-
                 <tr>
                     <th>Developer:</th>
                     <td><?= $row['developer'] ?></td>
                 </tr>
 
-
                 <tr>
                     <th>Online:</th>
                     <td><?= $row['online'] ?></td>
                 </tr>
+
+                <tr>
+                    <th>Description: </th>
+                    <td><?= $row['description'] ?></td>
+                </tr>
+
 
 
             </td>

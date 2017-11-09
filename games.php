@@ -56,7 +56,7 @@ $queryResult = $pdo->query("SELECT * from juegos");
         <tbody>
         <?php while( $row = $queryResult->fetch(PDO::FETCH_ASSOC) ): ?>
             <tr>
-                <td><a href="details.php?id=<?=$row['id']?>"><img src="<?=$row['image']?>"></td>
+                <td><a href="details.php?id=<?=$row['id']?>"><img src="<?=$row['image']?>" width="150px"></td>
                 <td><?=$row['name']?></td>
                 <td><?=$row['genre']?></td>
                 <td><?=$row['date']?></td>
