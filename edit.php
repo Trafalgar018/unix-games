@@ -1,20 +1,23 @@
 <?php
 include_once 'configurationDB/config.php';
 include_once 'configurationDB/connectdb.php';
+include_once 'helpers.php';
 $id = $_REQUEST['id'];
 $errors = [];
 
-print_r($id);
-
+$sql = "SELECT * FROM juegos WHERE id = :id";
+$result = $pdo->prepare($sql);
+$result->execute(['id' => $id]);
+$game = $result->fetch(PDO::FETCH_ASSOC);
 //Validamos el formulario
 
 if (!empty($_POST)) {
     $date = $_POST['date'];
-    $description = $_POST['description'];
-    $developer = $_POST['developer'];
-    $genre = $_POST['genre'];
-    $image = $_POST['image'];
-    $name = $_POST['name'];
+    $description = htmlspecialchars(trim($_POST['description']));
+    $developer = htmlspecialchars(trim($_POST['developer']));
+    $genre = htmlspecialchars(trim($_POST['genre']));
+    $image = htmlspecialchars(trim($_POST['image']));
+    $name = htmlspecialchars(trim($_POST['name']));
     $online = $_POST['online'];
 
     if (empty($name)) {
@@ -106,7 +109,7 @@ if (!empty($_POST)) {
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Game Name">
+                <input type="text" class="form-control" id="name" name="name" value="<?= $game['name'] ?>">
             </div>
 
             <!-- INPUT GENRE -->
@@ -131,28 +134,28 @@ if (!empty($_POST)) {
 
             <div class="form-group">
                 <label for="image">Image</label>
-                <input type="text" class="form-control" id="image" name="image" placeholder="Image URL">
+                <input type="text" class="form-control" id="image" name="image" value="<?= $game['image'] ?>">
             </div>
 
             <!-- INPUT DESCRIPTION -->
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                <textarea class="form-control" name="description" id="description" rows="5"><?= $game['description'] ?></textarea>
             </div>
 
             <!-- INPUT DATE -->
 
             <div class="form-group">
                 <label for="date">Date of Publication</label>
-                <input type="date" class="form-control" id="date" name="date">
+                <input type="date" class="form-control" id="date" name="date" value="<?= $game['date'] ?>">
             </div>
 
             <!-- INPUT DEVELOPER -->
 
             <div class="form-group">
                 <label for="developer">Developer</label>
-                <input type="text" class="form-control" id="developer" name="developer" placeholder="Developer">
+                <input type="text" class="form-control" id="developer" name="developer" value="<?= $game['developer'] ?>">
             </div>
 
             <!-- INPUT ONLINE -->
@@ -160,8 +163,8 @@ if (!empty($_POST)) {
             <div class="form-group">
                 <label for="online">Online</label>
                 <select class="form-control" name="online">
-                    <option value="false">No</option>
-                    <option value="true">Yes</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
                 </select>
             </div>
 

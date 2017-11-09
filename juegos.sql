@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-11-2017 a las 20:34:31
+-- Tiempo de generación: 09-11-2017 a las 21:26:00
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -45,7 +45,7 @@ CREATE TABLE `juegos` (
 
 INSERT INTO `juegos` (`name`, `genre`, `image`, `description`, `developer`, `date`, `id`, `online`) VALUES
 ('Alien Arena', 'Shooter', 'http://red.planetarena.org/images/top_img.jpg', 'Space Shooter.', 'COR Entertainment', '2004-10-01', 6, 0),
-('Red Eclipse', 'Shooter', 'https://i.ytimg.com/vi/oJRZHjyj7Zg/maxresdefault.jpg', 'Futuristic Shooter', 'cube2', '2009-06-17', 9, 0),
+('Red Eclipse', 'Action', 'https://i.ytimg.com/vi/oJRZHjyj7Zg/maxresdefault.jpg', 'SpaceÂ´s shooter.', 'cube2', '2009-06-17', 9, 1),
 ('Counter-Strike: Global Offensive', 'Shooter', 'http://www.3djuegos.com/juegos/7909/counterstrike_global_offensive/fotos/ficha/counterstrike_global_offensive-1942556.jpg', 'shooter', 'Valve', '2012-08-21', 14, 0),
 ('ASCII PORTAL', 'Strategy', 'https://i.emezeta.com/cache/img/1284_o.jpg', 'Game Portal with ASCII !!', 'Radsoft', '2009-02-05', 16, 0),
 ('Minecraft', 'Adventure', 'http://xombitgames.com/files/2012/12/minecraft.jpg', 'Adolfo\'s live simulator', 'mojang', '2009-05-16', 17, 0),
@@ -69,7 +69,7 @@ ALTER TABLE `juegos`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

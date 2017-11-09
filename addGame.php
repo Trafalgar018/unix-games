@@ -9,12 +9,13 @@ $errors = [];
 
 if (!empty($_POST)) {
     $date = $_POST['date'];
-    $description = $_POST['description'];
-    $developer = $_POST['developer'];
-    $genre = $_POST['genre'];
-    $image = $_POST['image'];
-    $name = $_POST['name'];
+    $description = htmlspecialchars(trim($_POST['description']));
+    $developer = htmlspecialchars(trim($_POST['developer']));
+    $genre = htmlspecialchars(trim($_POST['genre']));
+    $image = htmlspecialchars(trim($_POST['image']));
+    $name = htmlspecialchars(trim($_POST['name']));
     $online = $_POST['online'];
+
 
     if (empty($name)) {
         $errors['name']['empty_name'] = 'No name found';
