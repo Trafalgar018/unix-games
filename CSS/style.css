@@ -1,0 +1,26 @@
+body{
+    background-image: url("https://i.imgur.com/vzRN4in.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-color: rgba(19,26,32,0.84);
+}
+
+h2{
+    color: #FFFFFF;
+    margin: 5px;
+}
+
+div[name = text]{
+    background-color: #84a5a5;
+    border-radius: 20px;
+}
+
+img{
+    size: 75px 75px;
+}
+
+
+
+nav#head{
+    background-color: #42e778;
+}
